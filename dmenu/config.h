@@ -6,7 +6,7 @@
 ███    ███ ███   ███   ███ ▀▀███▀▀▀     ███   ███ ███    ███ 
 ███    ███ ███   ███   ███   ███    █▄  ███   ███ ███    ███ 
 ███   ▄███ ███   ███   ███   ███    ███ ███   ███ ███    ███ Author:: Ayush Jayaswal
-████████▀   ▀█   ███   █▀    ██████████  ▀█   █▀  ████████▀  Dmenu Config File, inspired from DT's Configs...
+████████▀   ▀█   ███   █▀    ██████████  ▀█   █▀  ████████▀  Dmenu Config File.
 */
 
 static int topbar = 1;       /* -b  option; if 0, dmenu appears at bottom     */
