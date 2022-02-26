@@ -1,13 +1,11 @@
 /*
- ::::::::::::::::::: 
-:+:    :+:   :+:     
-+:+          +:+     
-+#++:++#++   +#+     
-       +#+   +#+     
-#+#    #+#   #+#    Author:: Ayush Jayaswal 
- ########    ###    St Terminal config 
+███████╗████████╗
+██╔════╝╚══██╔══╝
+███████╗   ██║   
+╚════██║   ██║   Author:: Ayush Jayaswal 
+███████║   ██║   St Terminal config 
+╚══════╝   ╚═╝   
 */
-
 static char *font = "mononoki Nerd Font:pixelsize=19:antialias=true:autohint=true";
 static char *font2[] = { 
     "Symbola:pixelsize=20:antialias=true:autohint=true",
