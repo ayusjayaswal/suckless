@@ -1,1 +1,2 @@
 # suckless
+![Screenshot](dmenu.png)
