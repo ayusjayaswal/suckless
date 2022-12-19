@@ -1,7 +1,7 @@
 # Farbfeld
 
 ### WHAT IS FARBFELD?
-	Farbfeld is a lossless image-format designed to be
+Farbfeld is a lossless image-format designed to be
 	parsed and piped easily. It is probably the simplest
 	image-format you can find (see FORMAT).
 	It does not have integrated compression, but allows
@@ -13,20 +13,24 @@
 	show up in the future.
 
 ### HOW DO I USE THE TOOLS?
-	encoding:
-	png2ff < example.png > example.ff
-	png2ff < example.png | bzip2 > example.ff.bz2
+encoding:
+```
+png2ff < example.png > example.ff
+png2ff < example.png | bzip2 > example.ff.bz2
+```
+	
+decoding:
+```
+ff2png < example.ff > example.png
+bzcat example.ff.bz2 | ff2png > example.png
+```
 
-	decoding:
-	ff2png < example.ff > example.png
-	bzcat example.ff.bz2 | ff2png > example.png
-
-	bzip2 is used in this example and a recommended
+bzip2 is used in this example and a recommended
 	compression algorithm. Of course you are free
 	to use something else.
 
 ### WHY FARBFELD?
-	Current image-formats have integrated compression,
+Current image-formats have integrated compression,
 	making it complicated to read the image data.
 	One is forced to use complex libraries like libpng,
 	libjpeg, libjpeg-turbo, giflib and others, read the
@@ -45,7 +49,7 @@
 	and farbfeld.
 
 ### HOW DOES IT WORK?
-	In farbfeld, pattern resolution is not done while
+In farbfeld, pattern resolution is not done while
 	converting, but while compressing the image.
 	For example, farbfeld always stores the alpha-channel,
 	even if the image doesn't have alpha-variation.
