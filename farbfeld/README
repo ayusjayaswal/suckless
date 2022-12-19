@@ -1,12 +1,6 @@
+# Farbfeld
 
-                 ███ ███ ██  ██  ███ ███ █   ██
-                 █   █ █ █ █ █ █ █   █   █   █ █
-                 ██  ███ ██  ███ ██  ██  █   █ █
-                 █   █ █ █ █ █ █ █   █   █   █ █
-                 █   █ █ █ █ ██  █   ███ ███ ██
-
-
-WHAT IS FARBFELD?
+### WHAT IS FARBFELD?
 	Farbfeld is a lossless image-format designed to be
 	parsed and piped easily. It is probably the simplest
 	image-format you can find (see FORMAT).
@@ -18,7 +12,7 @@ WHAT IS FARBFELD?
 	is trivial to switch to better and faster ones as they
 	show up in the future.
 
-HOW DO I USE THE TOOLS?
+### HOW DO I USE THE TOOLS?
 	encoding:
 	png2ff < example.png > example.ff
 	png2ff < example.png | bzip2 > example.ff.bz2
@@ -31,7 +25,7 @@ HOW DO I USE THE TOOLS?
 	compression algorithm. Of course you are free
 	to use something else.
 
-WHY FARBFELD?
+### WHY FARBFELD?
 	Current image-formats have integrated compression,
 	making it complicated to read the image data.
 	One is forced to use complex libraries like libpng,
@@ -50,7 +44,7 @@ WHY FARBFELD?
 	to make it easy to convert between common image formats
 	and farbfeld.
 
-HOW DOES IT WORK?
+### HOW DOES IT WORK?
 	In farbfeld, pattern resolution is not done while
 	converting, but while compressing the image.
 	For example, farbfeld always stores the alpha-channel,
