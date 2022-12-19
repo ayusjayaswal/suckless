@@ -1,3 +1,4 @@
+# Sent
 sent is a simple plaintext presentation tool.
 
 sent does not need latex, libreoffice or any other fancy file format, it uses
@@ -8,22 +9,18 @@ The presentation is displayed in a simple X11 window. The content of each slide
 is automatically scaled to fit the window and centered so you also don't have to
 worry about alignment. Instead you can really concentrate on the content.
 
-
-Dependencies
-
+## Dependencies
 You need Xlib and Xft to build sent and the farbfeld[0] tools installed to use
 images in your presentations.
 
-Demo
-
+## Demo
 To get a little demo, just type
 
 	make && ./sent example
 
 You can navigate with the arrow keys and quit with `q`.
 
-
-Usage
+## Usage
 
 	sent [FILE]
 
@@ -51,7 +48,7 @@ with `#` will be ignored. A `\` at the beginning of the line escapes `@` and
 	thanks / questions?
 
 
-Development
+## Development
 
 sent is developed at http://tools.suckless.org/sent
 
