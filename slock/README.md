@@ -15,6 +15,13 @@ Afterwards enter the following command to build and install slock
 ```
 sudo make clean install
 ```
+## Setup
+Edit config.h file and put your user name and user group
+```
+/* user and group to drop privileges to */
+static const char *user  = "<user_name>";
+static const char *group = "<user_group";
+```
 
 ## Running slock
 
