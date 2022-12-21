@@ -29,3 +29,8 @@ Simply invoke the 'slock' command. To get out of it, enter your password.
 ```
 slock
 ```
+## Xautolock
+slock can be started after a specific period of user inactivity using xautolock. The command syntax is:
+```
+xautolock -time 10 -locker slock
+```
