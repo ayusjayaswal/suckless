@@ -1,6 +1,6 @@
-# suckless
-![Screenshot](dwmclean.png)
-![Screenshot](dwm2.png)
+# Ayush's build of Simple Terminal
+    It is easy to just get terminals like Alacritty, urxvt, termite or kitty but having your own build of terminal is a joy.
 
-## dmenu
-![Screenshot](drun.png)
+## Random Screenshot
+![Terminal Screenshot](terminal.png)
+
