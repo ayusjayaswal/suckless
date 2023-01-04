@@ -6,7 +6,7 @@
 ███████║   ██║   St Terminal config 
 ╚══════╝   ╚═╝   
 */
-static char *font = "mononoki Nerd Font:pixelsize=19:antialias=true:autohint=true";
+static char *font = "mononoki Nerd Font:pixelsize=27:antialias=true:autohint=true";
 static char *font2[] = { 
     "Symbola:pixelsize=20:antialias=true:autohint=true",
 };
@@ -98,7 +98,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.95;
+float alpha = 0.9;
 
 /* Terminal colors (16 first used in escape sequence) */
 /* Colorscheme based on the 'Doom One' theme from Doom Emacs */
@@ -148,7 +148,7 @@ static unsigned int defaultrcs = 15;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 2;
+static unsigned int cursorshape = 22;
 
 /*
  * Default columns and rows numbers
