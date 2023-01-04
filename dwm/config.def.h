@@ -3,7 +3,7 @@
 ██╔══██╗██║    ██║████╗ ████║
 ██║  ██║██║ █╗ ██║██╔████╔██║ 
 ██║  ██║██║███╗██║██║╚██╔╝██║ Author: Ayush Jayaswal
-██████╔╝╚███╔███╔╝██║ ╚═╝ ██║ Dwm Config File...
+██████╔╝╚███╔███╔╝██║ ╚═╝ ██║ Dwm Config File
 ╚═════╝  ╚══╝╚══╝ ╚═╝     ╚═╝
 */
 /* appearance */
@@ -29,7 +29,7 @@ static const char col_4[]  = "#625e5e";
  * 0xdd adds adds a bit more transparency.
  * Play with the value to get desired transparency.
  */
-static const unsigned int baralpha    = 0xee; 
+static const unsigned int baralpha    = 0xdd; 
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]        = {
 	/*               fg         bg         border   */
@@ -49,20 +49,25 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+	{ "pcmanfm",     NULL,       NULL,       0,            1,           -1 },
 };
 /* layout(s) */
 static const float mfact     = 0.50; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 #include "layouts.c"
+#include "fibonacci.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "匿",      tile },    /* first entry is default */
-	{ " ",      NULL },    /* no layout function means floating behavior */
-	{ " ",      monocle },
-	{ "﩯",      grid },
-	{ NULL,       NULL },
+	{ "匿" ,      tile },    /* first entry is default */
+	{ "",      NULL },    /* no layout function means floating behavior */
+	{ "ﬕ",      monocle },
+	{ "",      grid },
+    { "",      dwindle },
+    { "",      spiral },
+	{ "恵",     centeredmaster },
+    { " ",     centeredfloatingmaster },
+	{ NULL,     NULL },
 };
 /* key definitions */
 #define MODKEY Mod4Mask
@@ -78,13 +83,15 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 /* If you are using the standard dmenu program, use the following. */
 static const char *dmenucmd[]    = { "dmenu_run", "-p", "   ", NULL };
-static const char *termcmd[]     = { "urxvt", NULL };
+static const char *termcmd[]     = { "alacritty", NULL };
 static const char *termzsh[]     = { "st", NULL };
+static const char *termnvim[]     = { "st", "nvim", NULL };
 static const char *tabtermcmd[]  = { "tabbed", "-r", "2", "st", "-w", "''", NULL };
 static Key keys[] = {
 	/* modifier             chain key  key        function        argument */
 	{ MODKEY|ShiftMask,     -1,        XK_Return, spawn,          {.v = dmenucmd } },
 	{ MODKEY,               -1,        XK_Return, spawn,          {.v = termzsh } },
+	{ MODKEY,               -1,        XK_v     , spawn,          {.v = termnvim } },
 	{ MODKEY|ControlMask,   -1,        XK_Return, spawn,          {.v = termcmd } },
 	{ Mod1Mask,             -1,        XK_Return, spawn,          {.v = tabtermcmd } },
 	{ MODKEY,               -1,        XK_b,      togglebar,      {0} },
@@ -100,21 +107,22 @@ static Key keys[] = {
 	{ MODKEY,		        -1,        XK_x,      killclient,     {0} },
 
     /* Layout manipulation */
-	{ MODKEY,               -1,        XK_Tab,    cyclelayout,    {.i = -1 } },
-	{ MODKEY|ShiftMask,     -1,        XK_Tab,    cyclelayout,    {.i = +1 } },
+	{ MODKEY,               -1,        XK_Tab,    cyclelayout,    {.i = +1 } },
+	{ MODKEY|ShiftMask,     -1,        XK_Tab,    cyclelayout,    {.i = -1 } },
 	{ MODKEY|ShiftMask,     -1,        XK_space,  togglefloating, {0} },
     /* Switch to specific layouts */
 	{ MODKEY,               -1,        XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,               -1,        XK_f,      fullscreen,      {0} }, 
 	{ MODKEY,               -1,        XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,               -1,        XK_g,      setlayout,      {.v = &layouts[3]} },
+    { MODKEY,               -1,        XK_u,      setlayout,      {.v = &layouts[4]} },
+    { MODKEY,               -1,        XK_o,      setlayout,      {.v = &layouts[5]} },
+ 	{ MODKEY,               -1,        XK_r,      setlayout,      {.v = &layouts[6]} },
 
 	{ MODKEY,               -1,        XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,     -1,        XK_0,      tag,            {.ui = ~0 } },
 	
     /* Keybindings for programs using the format SUPER + ALT + "key" */
-	{ MODKEY|ControlMask,      -1,        XK_b,      spawn,          CMD("firefox") },
-	{ MODKEY|ControlMask,      -1,        XK_e,      spawn,          CMD("st -e ranger") },
 	
 	TAGKEYS(                -1,        XK_1,                      0)
 	TAGKEYS(                -1,        XK_2,                      1)
