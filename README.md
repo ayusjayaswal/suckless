@@ -2,8 +2,8 @@
 Software that sucks less.
 
 ## dwm
-![Screenshot](dwmclean.png)
-![Screenshot](dwm2.png)
+![Screenshot](dwm/dwmclean.png)
+![Screenshot](dwm/dwm2.png)
 
 ## dmenu
 ![Screenshot](drun.png)
