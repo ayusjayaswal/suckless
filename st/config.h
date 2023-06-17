@@ -6,7 +6,7 @@
 ███████║   ██║   St Terminal config 
 ╚══════╝   ╚═╝   
 */
-static char *font = "mononoki Nerd Font:pixelsize=27:antialias=true:autohint=true";
+static char *font = "mononoki Nerd Font:pixelsize=20:antialias=true:autohint=true";
 static char *font2[] = { 
     "Symbola:pixelsize=20:antialias=true:autohint=true",
 };
@@ -79,7 +79,6 @@ static int bellvolume = 0;
 
 /* default TERM value */
 char *termname = "st-256color";
-
 /*
  * spaces per tab
  *

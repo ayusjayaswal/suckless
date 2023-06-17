@@ -20,21 +20,23 @@ static const char *fonts[]     = { "JetBrainsMono Nerd Font:weight=bold:size=9:a
                                     "Symbola:size=10:antialias=true:autohint=true"
                                   };
 static const char col_1[]  = "#282828"; 
-static const char col_2[]  = "#ff7376";
+static const char col_2[]  = "#ff9d57"; 
+/* static const char col_2[]  = "#ff7376"; */
 static const char col_3[]  = "#ebdbb2";
 static const char col_4[]  = "#625e5e";
+static const char col_5[]  = "#cf844e";
 /* bar opacity 
  * 0xff is no transparency.
  * 0xee adds wee bit of transparency.
  * 0xdd adds adds a bit more transparency.
  * Play with the value to get desired transparency.
  */
-static const unsigned int baralpha    = 0xdd; 
+static const unsigned int baralpha    = 0xbb; 
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]        = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_3, col_1, col_1 },
-	[SchemeSel]  = { col_1, col_2, col_4 },
+	[SchemeSel]  = { col_1, col_2, col_5 },
 };
 static const unsigned int alphas[][3] = {
 	/*               fg      bg        border     */
@@ -49,7 +51,8 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "pcmanfm",     NULL,       NULL,       0,            1,           -1 },
+    { "Pcmanfm",     NULL,       NULL,       0,          True,           -1 },
+    { "XCalc",     NULL,       NULL,       0,          True,           -1 },
 };
 /* layout(s) */
 static const float mfact     = 0.50; /* factor of master area size [0.05..0.95] */
@@ -59,14 +62,14 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 #include "fibonacci.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "匿" ,      tile },    /* first entry is default */
+	{ "匿" ,    tile },    /* first entry is default */
 	{ "",      NULL },    /* no layout function means floating behavior */
 	{ "ﬕ",      monocle },
-	{ "",      grid },
     { "",      dwindle },
     { "",      spiral },
 	{ "恵",     centeredmaster },
     { " ",     centeredfloatingmaster },
+	/* { "",      grid }, */
 	{ NULL,     NULL },
 };
 /* key definitions */
@@ -85,24 +88,18 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[]    = { "dmenu_run", "-p", "   ", NULL };
 static const char *termcmd[]     = { "alacritty", NULL };
 static const char *termzsh[]     = { "st", NULL };
-static const char *termnvim[]     = { "st", "nvim", NULL };
-static const char *tabtermcmd[]  = { "tabbed", "-r", "2", "st", "-w", "''", NULL };
 static Key keys[] = {
 	/* modifier             chain key  key        function        argument */
 	{ MODKEY|ShiftMask,     -1,        XK_Return, spawn,          {.v = dmenucmd } },
 	{ MODKEY,               -1,        XK_Return, spawn,          {.v = termzsh } },
-	{ MODKEY,               -1,        XK_v     , spawn,          {.v = termnvim } },
 	{ MODKEY|ControlMask,   -1,        XK_Return, spawn,          {.v = termcmd } },
-	{ Mod1Mask,             -1,        XK_Return, spawn,          {.v = tabtermcmd } },
 	{ MODKEY,               -1,        XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,     -1,        XK_s,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,     -1,        XK_w,      rotatestack,    {.i = -1 } },
 	{ MODKEY,               -1,        XK_s,      focusstack,     {.i = +1 } },
 	{ MODKEY,               -1,        XK_w,      focusstack,     {.i = -1 } },
-	{ MODKEY,               -1,        XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY,               -1,        XK_d,      incnmaster,     {.i = -1 } },
-	{ MODKEY,               -1,        XK_h,      setmfact,       {.f = -0.05} },
-	{ MODKEY,               -1,        XK_l,      setmfact,       {.f = +0.05} },
+	{ MODKEY,               -1,        XK_d,      setmfact,       {.f = -0.05} }, /*Decrease master*/
+	{ MODKEY,               -1,        XK_i,      setmfact,       {.f = +0.05} }, /*Increase master*/
 	{ MODKEY,               -1,        XK_backslash,    view,           {0} },
 	{ MODKEY,		        -1,        XK_x,      killclient,     {0} },
 
@@ -113,11 +110,8 @@ static Key keys[] = {
     /* Switch to specific layouts */
 	{ MODKEY,               -1,        XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,               -1,        XK_f,      fullscreen,      {0} }, 
-	{ MODKEY,               -1,        XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,               -1,        XK_g,      setlayout,      {.v = &layouts[3]} },
-    { MODKEY,               -1,        XK_u,      setlayout,      {.v = &layouts[4]} },
-    { MODKEY,               -1,        XK_o,      setlayout,      {.v = &layouts[5]} },
- 	{ MODKEY,               -1,        XK_r,      setlayout,      {.v = &layouts[6]} },
+    { MODKEY,               -1,        XK_u,      setlayout,      {.v = &layouts[3]} },
+ 	{ MODKEY,               -1,        XK_c,      setlayout,      {.v = &layouts[5]} },
 
 	{ MODKEY,               -1,        XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,     -1,        XK_0,      tag,            {.ui = ~0 } },

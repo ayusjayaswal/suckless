@@ -65,6 +65,15 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
+/* <<<<<<< HEAD */
+    { cpu_perc, "  %s%% ", NULL },
+    { ram_perc, "  %s%% ", NULL },
+    {run_command, "  %s ", "sensors | awk '/^Tctl/ {print $2}'" },
+    { datetime, "%s","|  %e %b,%a | %I:%M %p "},
+    { battery_state, "|   %s"    , "BAT0"},
+    { battery_perc," %s%% ", "BAT0"},
+    { battery_remaining,"%s% ", "BAT0"},
+/* ======= */
     { netspeed_rx, " %sB/s ", "enp0s3" },
     { netspeed_tx, " %sB/s  ", "enp0s3" },
     { cpu_perc, "  %s%%  ", NULL	      },
@@ -72,4 +81,5 @@ static const struct arg args[] = {
     { battery_perc, "   %s%%-", NULL	      },
     { battery_remaining, "%s%%   ", NULL	      },
     { datetime, "%s",           " %a %b %e, %I:%M %p" },
+/* >>>>>>> 803dac3 (Add files via upload) */
 };
