@@ -4,13 +4,22 @@
 Software that sucks less.
 ** Dwm
 [[Dwm Logo][dwm/dwm.png]]
+
 Dwm is a dynamic window manager for X. It manages windows in tiled, monocle and floating layouts. All of the layouts can be applied dynamically, optimising the environment for the application in use and the task performed.
+
 [[Screenshot][dwm/dwmclean.png]]
+
 Dwm draws a small customizable border around windows to indicate the focus state.
+
 [[Screenshot][dwm/dwmfocus.png]]
+
 ** Dmenu
+
 dmenu is a dynamic menu for X, originally designed for dwm. It manages large numbers of user-defined menu items efficiently.
 [[Screenshot][dmenu/drun.png]]
+
 ** St Terminal
+
 st is a simple terminal implementation for X.
+
 [[St Terminal][st/terminal.png]]
