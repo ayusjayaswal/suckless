@@ -1,0 +1,12 @@
+#+TITLE:Readme File for Ayush'd builds of Suckless Software
+#+AUTHOR:Ayush Jayaswal
+#+DESCRIPTION: Ayush's Build of Suckless Programs
+
+Software that sucks less.
+** Dwm
+[[Screenshot][dwm/dwmclean.png]]
+[[Screenshot][dwm/dwm2.png]]
+** Dmenu
+[[Screenshot][drun.png]]
+** St Terminal
+[[St Terminal][st/terminal.png]]
