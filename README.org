@@ -1,4 +1,4 @@
-#+TITLE:Readme File for Ayush'd builds of Suckless Software
+#+TITLE:Ayush's builds of Suckless Software
 #+AUTHOR:Ayush Jayaswal
 #+DESCRIPTION: Ayush's Build of Suckless Programs
 
